@@ -3,3 +3,9 @@ min_num = nil
    min_num = min_num == nil || min_num > num ? num : min_num
 end
 puts min_num    #=> -7
+
+#using inject
+min_answer = [65,3,100,42,-7].inject do |min_num, num| 
+   min_num =  min_num > num ? num : min_num
+end      
+puts min_answer #=> -7
