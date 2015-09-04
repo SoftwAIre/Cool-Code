@@ -1,0 +1,4 @@
+min_num = nil
+[65,3,100,42,-7].each do |num|
+   min_num = num if min_num == nil || min_num > num
+end
