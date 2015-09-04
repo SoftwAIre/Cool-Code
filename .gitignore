@@ -4,23 +4,29 @@ min_num = nil
 end
 puts min_num    #=> -7
 
+######################################################################
 #using inject
 min_answer = [65,3,100,42,-7].inject do |min_num, num| 
    min_num =  min_num > num ? num : min_num
 end      
 puts min_answer #=> -7
 
+######################################################################
 #fib sequence
 arr = [0,1]
 18.times do
     arr << arr[-2] + arr[-1]
 end  
+
+######################################################################
 #fib sequence using inject
 arr = 18.times.inject([0,1]) do |a, idx|
     a << a[-2] + a[-1]
 end
 puts arr.join(', ')
 #=> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
+
+######################################################################
 
 #convert two-d array into hash
 data_arr = [['dog', 'Fido'], ['cat', 'Whiskers'], ['fish', 'Fluffy']]
@@ -30,6 +36,7 @@ data_arr.each do |d|
     data_hash[d[0]] = d[1]
 end
 
+######################################################################
 #convert two-d array into hash using inject
 data_arr = [['dog', 'Fido'], ['cat', 'Whiskers'], ['fish', 'Fluffy']]
 
@@ -37,3 +44,25 @@ data_hash = data_arr.inject({}) do |hsh, v|
     hsh[v[0]] = v[1]
     hsh
 end
+
+######################################################################
+# Creating our own Collect method - go into the Array Class to do this
+class Array
+  def iterate!
+    self.each_with_index do |n, i|
+      self[i] = yield(n)
+    end
+  end
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate! do |n|
+  n ** 2
+end
+
+puts array.inspect
+
+# => [1, 4, 9, 16]
+######################################################################
+
