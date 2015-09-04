@@ -10,8 +10,14 @@ min_answer = [65,3,100,42,-7].inject do |min_num, num|
 end      
 puts min_answer #=> -7
 
-#fib sequence using inject
+#fib sequence
 arr = [0,1]
 18.times do
     arr << arr[-2] + arr[-1]
 end  
+#fib sequence using inject
+arr = 18.times.inject([0,1]) do |a, idx|
+    a << a[-2] + a[-1]
+end
+puts arr.join(', ')
+#=> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
