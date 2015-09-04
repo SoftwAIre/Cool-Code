@@ -9,3 +9,9 @@ min_answer = [65,3,100,42,-7].inject do |min_num, num|
    min_num =  min_num > num ? num : min_num
 end      
 puts min_answer #=> -7
+
+#fib sequence using inject
+arr = [0,1]
+18.times do
+    arr << arr[-2] + arr[-1]
+end  
