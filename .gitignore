@@ -21,3 +21,19 @@ arr = 18.times.inject([0,1]) do |a, idx|
 end
 puts arr.join(', ')
 #=> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
+
+#convert two-d array into hash
+data_arr = [['dog', 'Fido'], ['cat', 'Whiskers'], ['fish', 'Fluffy']]
+
+data_hash = {}
+data_arr.each do |d|
+    data_hash[d[0]] = d[1]
+end
+
+#convert two-d array into hash using inject
+data_arr = [['dog', 'Fido'], ['cat', 'Whiskers'], ['fish', 'Fluffy']]
+
+data_hash = data_arr.inject({}) do |hsh, v|
+    hsh[v[0]] = v[1]
+    hsh
+end
