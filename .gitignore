@@ -65,4 +65,7 @@ puts array.inspect
 
 # => [1, 4, 9, 16]
 ######################################################################
-
+# multiply two numbers a number of times
+def multiply_by x,y,n
+  (1..n).map {|i| x * y**i}
+end
