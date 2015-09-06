@@ -69,3 +69,9 @@ puts array.inspect
 def multiply_by x,y,n
   (1..n).map {|i| x * y**i}
 end
+
+######################################################################
+# I don't understand how flatten works / why zip should work in the definition of the method
+def zip first, second
+  first.zip(second).flatten(1)
+end
