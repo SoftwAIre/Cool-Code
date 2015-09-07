@@ -81,3 +81,10 @@ end
 def unused_digits(*args)
   (('0'..'9').to_a - args.join.chars).join  
 end
+
+######################################################################
+#ColbyDauph
+def sum_eq_n?(arr, n)
+  arr.empty? and n == 0 or arr.any? { |v| arr.include?(n - v) }
+end
+#this code is absolutely brilliant
