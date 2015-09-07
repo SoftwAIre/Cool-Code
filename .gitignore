@@ -75,3 +75,9 @@ end
 def zip first, second
   first.zip(second).flatten(1)
 end
+
+######################################################################
+# user: Beast
+def unused_digits(*args)
+  (('0'..'9').to_a - args.join.chars).join  
+end
