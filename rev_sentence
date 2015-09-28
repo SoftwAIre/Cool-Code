@@ -1,0 +1,13 @@
+def rev_sentence
+	doc = ARGV[0]
+	txt = File.new(doc, 'r+')
+	arr = []
+	txt.each_line do |line|
+		unless line == "\n"
+			line = line.split(" ")
+			$stdout.puts line.reverse.join(" ") 
+		end
+	end
+end
+
+rev_sentence
