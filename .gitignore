@@ -110,7 +110,7 @@ end
 
 first_n_primes(10002)
 
-######################################################################
+pn = Pathname.getwd
 module Action
   def jump
     @distance = rand(4) + 2
@@ -139,3 +139,6 @@ jiminy = Cricket.new("Jiminy")
 
 peter.jump
 jiminy.jump
+
+######################################################################
+pn = Pathname.getwd
