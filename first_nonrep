@@ -1,0 +1,12 @@
+def first_nonrep
+	doc = File.open(ARGV[0],'r+')
+	arr = []
+	doc.each_line do |line|
+		h = Hash.new(0)
+		arr = line.split(//)
+		arr.each { |elmt| h[elmt] +=1 }
+		$stdout.puts h.select { |k,v| v == 1 }.keys.first
+	end	
+end
+
+first_nonrep
