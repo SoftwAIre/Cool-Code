@@ -1,0 +1,16 @@
+def rep_nums
+	pn = ARGV[0]
+	doc = File.open(pn, 'r+')
+	doc.each_line do |line|
+		h = Hash.new(0)
+		arr = []
+		line = line.split(' ')
+		
+		line.each { |elmt| h[elmt] += 1 }
+		h.collect { |k,v| arr << k if v > 1}
+
+		$stdout.puts arr.join(' ')
+	end
+end
+
+rep_nums
