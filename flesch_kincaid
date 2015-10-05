@@ -1,0 +1,8 @@
+def flesch_kincaid(text)
+  num_words = text.split.size
+  num_sentences = text.split(/[.?!]/).size
+  num_vowels = text.scan(/[aeiou]+/i).size
+  
+  grade_level = (0.39 * num_words / num_sentences) + (11.8 * num_vowels / num_words) - 15.59
+  grade_level.round(2)
+end
