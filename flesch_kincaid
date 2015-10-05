@@ -6,3 +6,46 @@ def flesch_kincaid(text)
   grade_level = (0.39 * num_words / num_sentences) + (11.8 * num_vowels / num_words) - 15.59
   grade_level.round(2)
 end
+
+################################################################################################
+
+
+def flesch_kincaid(text)
+  kincaid = Kincaid.new(text)
+  kincaid.score
+end
+
+class Kincaid
+  VOWELS = /[aeiouy]+/i
+  WORD_DELIMETER = " "
+  SENTENCE_DELIMETER = /[.?!]+/
+
+  def initialize(text)
+    @text = text
+    @all_words = []
+  end
+
+  def score
+    result = (0.39 * average_number_of_words_per_sentence) + (11.8 * average_number_of_syllables_per_word) - 15.59
+    result.round(2)
+  end
+
+  private
+
+  def average_number_of_words_per_sentence
+    sentences = @text.split(SENTENCE_DELIMETER)
+    sentences.each do |sentence|
+      words = sentence.split(WORD_DELIMETER)
+      @all_words += words
+    end
+    @all_words.size.to_f / sentences.size.to_f
+  end
+
+  def average_number_of_syllables_per_word
+    count_of_syllables = 0
+    @all_words.each do |word|
+      count_of_syllables += word.scan(VOWELS).size
+    end
+    count_of_syllables.to_f / @all_words.size.to_f
+  end
+end
