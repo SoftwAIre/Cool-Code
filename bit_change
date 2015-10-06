@@ -1,0 +1,31 @@
+def convertBits(a,b)
+	a_bits = a.to_s(2)
+	b_bits = b.to_s(2)
+  
+  until a_bits.size % 4 == 0
+  	a_bits = "0" + a_bits
+  end
+
+  until b_bits.size % 4 == 0
+  	b_bits = "0" + b_bits
+  end
+
+  byt_size = a_bits.size / 4 > b_bits.size / 4 ? a_bits.size / 4 : b_bits.size / 4
+
+	until b_bits.size / 4 == byt_size
+		b_bits = "0000" + b_bits
+	end
+	until a_bits.size / 4 == byt_size
+		a_bits = "0000" + a_bits
+	end
+	
+	i = 0
+	arr = []
+	while i < a_bits.length
+		arr << i if a_bits[i] != b_bits[i]
+		i += 1
+	end
+	arr.size
+end
+
+convertBits(1,20)
