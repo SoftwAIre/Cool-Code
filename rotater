@@ -27,3 +27,19 @@ end
 
 a = Rotater.new(str1,str2)
 a.ret_n_val
+
+=begin
+def shifted_diff(str1,str2)
+	if str1.length != str2.length || str1.empty? || str2.empty?
+		return -1
+	else
+		i = 0
+		arr = str2.split(//)
+		until i >= arr.length
+			return i if str1 == arr.rotate(i).join
+			i += 1
+		end
+		return i = -1
+	end
+end
+=end
