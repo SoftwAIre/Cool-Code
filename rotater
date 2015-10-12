@@ -1,0 +1,27 @@
+
+class Rotater
+	def initialize(str1, str2)
+		@str1 = str1
+		@str2 = str2
+		@i = 0
+	end
+		
+	def ret_n_val
+		return 
+	end
+
+	def same_length?
+		-1 if @str1.length != @str2.length
+	end
+	
+	def rotations()
+		until @i >= @str2.length
+			return @i if @str1 == @str2
+			@i += 1
+		end
+		@i = -1
+	end
+end
+
+a = Rotater.new("coffee","eoff")
+p a.same_length?
