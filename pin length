@@ -1,0 +1,6 @@
+function validatePIN(pin) {
+  return /^(\d{4}|\d{6})$/.test(pin)
+}
+
+// searching for pin length from input pin using regex...test method returns true or false
+// if regexp returns true or false...
