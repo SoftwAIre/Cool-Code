@@ -1,3 +1,7 @@
+=begin
+find top, left, right, bottom-most positive binary values in least number of cell checks for 2-D array
+=end
+
 def arr_reader(arr)
 	left,right,top,bott = nil,nil,nil,nil
 	row,col,cell_reads = 0,0,0
