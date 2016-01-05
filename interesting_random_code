@@ -142,3 +142,11 @@ jiminy.jump
 
 ######################################################################
 pn = Pathname.getwd
+
+######################################################################
+def unused_digits(*args)
+  (('0'..'9').to_a - args.join.chars).join  
+end
+
+# I couldn't figure out how this worked. The way this user created this makes a lot of sense.
+# Beast
