@@ -1,0 +1,14 @@
+def self_descriptive(numF)
+  num = numF
+  len = num.to_s.size
+  arr = Array.new(len)
+  
+  indivNum = 0
+  
+  until num <= 0
+    indivNum = num % 10
+    arr[indivNum].nil? ? arr[indivNum] = 0 : arr[indivNum] += 1
+    num /= 10
+  end
+  numF == arr.join.to_i
+end
